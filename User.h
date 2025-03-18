@@ -1,25 +1,34 @@
+#ifndef USER_H
+#define USER_H
+
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-#ifndef USER_H
-#define USER_H
-
-
-
 class User {
-    private:
+private:
     string name;
-    int age;
-    public:
-    User() : name("Анонім"), age(18) {}
-    User(string n, int a) : name(n), age(a) {}
-    User(string n) : User(n, 18) {}
-    ~User() { cout << "User знищено: " << name << endl; }
-    void display() const { cout << "Користувач: " << name << " Вік: " << age << endl; }
+    string email;
+    static int userCount;
+
+public:
+    User();
+    User(string n, string e);
+    User(const User& other);
+    User(User&& other) noexcept;
+    ~User();
+
+    void display() const;
+    string getName() const;
+    static int getUserCount();
+
+    User& operator++();
+    User operator++(int);
+    User operator+(const User& other) const;
+
+    friend ostream& operator<<(ostream& os, const User& user);
+    friend istream& operator>>(istream& is, User& user);
 };
 
-
-
-#endif //USER_H
+#endif // USER_H

@@ -1,27 +1,26 @@
-#include <iostream>
-#include <string>
-
-using namespace std;
-
 #ifndef MEETING_H
 #define MEETING_H
 
+#include <iostream>
+#include <vector>
+#include "user.h"
 
+using namespace std;
 
 class Meeting {
 private:
     string title;
     string date;
     string time;
+    vector<User> participants;
+
 public:
-    Meeting() : title("Не вказано"), date("01-01-2025"), time("00:00") {}
-    Meeting(string t, string d, string tm) : title(t), date(d), time(tm) {}
-    Meeting(string t) : Meeting(t, "01-01-2025", "00:00") {}
-    ~Meeting() { cout << "Meeting знищено: " << title << endl; }
-    void display() const { cout << "Зустріч: " << title << " Дата: " << date << " Час: " << time << endl; }
+    Meeting();
+    Meeting(string t, string d, string tm, vector<User> p);
+    ~Meeting();
+
+    void addParticipant(const User& u);
+    void display() const;
 };
 
-
-
-
-#endif //MEETING_H
+#endif // MEETING_H

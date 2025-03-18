@@ -8,6 +8,6 @@ add_executable(oop main.cpp
         User.h
         Meeting.cpp
         Meeting.h
-        Location.cpp
-        Location.h
+        Calendar.cpp
+        Calendar.h
 )

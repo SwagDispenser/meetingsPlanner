@@ -1,31 +1,34 @@
 #include <iostream>
-#include <string>
-
-#include "Location.h"
-#include "Meeting.h"
-#include "User.h"
+#include "user.h"
 
 using namespace std;
 
-
 int main() {
-    Meeting meet1("Робоча зустріч", "05-03-2025", "10:00");
-    Meeting meet2("Дружня зустріч");
+    cout << "Кількість користувачів: " << User::getUserCount() << endl;
 
-    User user1("Олексій", 25);
-    User user2("Марина");
+    User u1("Олександр", "olex@example.com");
+    User u2("Марія", "maria@example.com");
 
-    Location loc1("вул. Шевченка, 10", "Київ");
-    Location loc2("пл. Ринок, 1");
+    cout << "Кількість користувачів: " << User::getUserCount() << endl;
 
-    meet1.display();
-    meet2.display();
+    User u3 = u1;
 
-    user1.display();
-    user2.display();
+    User u4 = move(u2);
 
-    loc1.display();
-    loc2.display();
+    ++u1;
+    cout << u1 << endl;
+
+    const User u5("Анна", "anna@example.com");
+    cout << "Ім'я користувача const: " << u5.getName() << endl;
+
+    User u6 = u1 + u3;
+    cout << "Об'єднаний користувач: " << u6 << endl;
+
+    User u7;
+    cin >> u7;
+    cout << "Введений користувач: " << u7 << endl;
+
+    cout << "Кількість користувачів: " << User::getUserCount() << endl;
 
     return 0;
 }
