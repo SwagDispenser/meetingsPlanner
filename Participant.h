@@ -10,11 +10,11 @@ public:
 
     Participant();
     Participant(const std::string& name, const std::string& email);
-    Participant(const Participant& other);            // Конструктор копіювання
-    Participant(Participant&& other) noexcept;        // Конструктор переміщення
+    Participant(const Participant& other);
+    Participant(Participant&& other) noexcept;
 
-    Participant& operator=(const Participant& other); // Оператор копіювання
-    Participant& operator=(Participant&& other) noexcept; // Оператор переміщення
+    Participant& operator=(const Participant& other);
+    Participant& operator=(Participant&& other) noexcept;
 
     ~Participant();
 
