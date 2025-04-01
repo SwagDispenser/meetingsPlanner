@@ -16,7 +16,6 @@ public:
     std::vector<RegularParticipant> participants;
     Location location;
 
-    // Конструктори
     Meeting();
     Meeting(const std::string& title, const std::string& description, const std::string& dateTime,
             const Organizer& organizer, const Location& location);

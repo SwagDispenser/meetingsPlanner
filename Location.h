@@ -9,23 +9,19 @@ public:
     std::string address;
     std::string country;
 
-    // Конструктори
     Location();
     Location(const std::string& name, const std::string& address, const std::string& country);
-    Location(const Location& other);            // Конструктор копіювання
-    Location(Location&& other) noexcept;        // Конструктор переміщення
+    Location(const Location& other);
+    Location(Location&& other) noexcept;
     ~Location();
 
-    // Оператори присвоєння
-    Location& operator=(const Location& other); // Оператор копіювання
-    Location& operator=(Location&& other) noexcept; // Оператор переміщення
+    Location& operator=(const Location& other);
+    Location& operator=(Location&& other) noexcept;
 
-    // Геттери
     std::string getName() const;
     std::string getAddress() const;
     std::string getCountry() const;
 
-    // Сеттери
     void setName(const std::string& name);
     void setAddress(const std::string& address);
     void setCountry(const std::string& country);

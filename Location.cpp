@@ -1,28 +1,20 @@
 #include "Location.h"
 
 #include <iostream>
-#include <utility>  // Для std::move
 
-// Конструктор за замовчуванням
 Location::Location() : name(""), address(""), country("") {}
 
-// Конструктор з параметрами
 Location::Location(const std::string& name, const std::string& address, const std::string& country)
     : name(name), address(address), country(country) {}
 
-// Конструктор копіювання
 Location::Location(const Location& other)
     : name(other.name), address(other.address), country(other.country) {}
 
-// Конструктор переміщення
 Location::Location(Location&& other) noexcept
     : name(std::move(other.name)), address(std::move(other.address)), country(std::move(other.country)) {}
 
-// Деструктор
 Location::~Location() {}
 
-
-// Оператор копіювання
 Location& Location::operator=(const Location& other) {
     if (this != &other) {
         name = other.name;
@@ -32,7 +24,6 @@ Location& Location::operator=(const Location& other) {
     return *this;
 }
 
-// Оператор переміщення
 Location& Location::operator=(Location&& other) noexcept {
     if (this != &other) {
         name = std::move(other.name);
@@ -43,7 +34,6 @@ Location& Location::operator=(Location&& other) noexcept {
 }
 
 
-// Геттери
 std::string Location::getName() const {
     return name;
 }
