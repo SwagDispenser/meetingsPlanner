@@ -8,24 +8,19 @@ class Organizer : public Participant {
 private:
     std::string department;
 public:
-    // Конструктори
+
     Organizer();
     Organizer(const std::string& name, const std::string& email, const std::string& department);
-    Organizer(const Organizer& other);            // Конструктор копіювання
-    Organizer(Organizer&& other) noexcept;        // Конструктор переміщення
+    Organizer(const Organizer& other);
+    Organizer(Organizer&& other) noexcept;
 
-    // Деструктор
     ~Organizer();
 
-    // Оператори присвоєння
-    Organizer& operator=(const Organizer& other); // Оператор копіювання
-    Organizer& operator=(Organizer&& other) noexcept; // Оператор переміщення
+    Organizer& operator=(const Organizer& other);
+    Organizer& operator=(Organizer&& other) noexcept;
 
-
-    // Геттери
     std::string getDepartment() const;
 
-    // Сеттери
     void setDepartment(const std::string& department);
 
 };
