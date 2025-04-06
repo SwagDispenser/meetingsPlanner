@@ -7,12 +7,6 @@ Location::Location() : name(""), address(""), country("") {}
 Location::Location(const std::string& name, const std::string& address, const std::string& country)
     : name(name), address(address), country(country) {}
 
-Location::Location(const Location& other)
-    : name(other.name), address(other.address), country(other.country) {}
-
-Location::Location(Location&& other) noexcept
-    : name(std::move(other.name)), address(std::move(other.address)), country(std::move(other.country)) {}
-
 Location::~Location() {}
 
 Location& Location::operator=(const Location& other) {
@@ -32,7 +26,6 @@ Location& Location::operator=(Location&& other) noexcept {
     }
     return *this;
 }
-
 
 std::string Location::getName() const {
     return name;
