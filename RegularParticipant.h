@@ -16,7 +16,7 @@ public:
     RegularParticipant(const RegularParticipant& other);
     RegularParticipant(RegularParticipant&& other) noexcept;
 
-    ~RegularParticipant();
+     virtual ~RegularParticipant() override;
 
     std::string getPosition() const;
     std::string getCompany() const;
@@ -29,7 +29,12 @@ public:
     void setCompany(const std::string& company);
     void setConfirmed(bool confirmed);
 
-    void display() const;
+    void describe() const override;
+    std::string getRole() const override;
+    void displayInfo() const override;
+
+    void doStaticThing();
+
 };
 
 #endif // REGULARPARTICIPANT_H
