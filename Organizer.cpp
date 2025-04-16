@@ -1,7 +1,6 @@
 #include "Organizer.h"
-
 #include <iostream>
-#include <ostream>
+#include <utility>
 
 Organizer::Organizer() : Participant(), department("") {}
 
@@ -15,10 +14,6 @@ Organizer::Organizer(Organizer&& other) noexcept
     : Participant(std::move(other)), department(std::move(other.department)) {}
 
 Organizer::~Organizer() {}
-
-std::string Organizer::getDepartment() const {
-    return department;
-}
 
 Organizer& Organizer::operator=(const Organizer& other) {
     if (this != &other) {
@@ -36,6 +31,22 @@ Organizer& Organizer::operator=(Organizer&& other) noexcept {
     return *this;
 }
 
+std::string Organizer::getDepartment() const {
+    return department;
+}
+
 void Organizer::setDepartment(const std::string& department) {
     this->department = department;
+}
+
+void Organizer::describe() const {
+    std::cout << "[Organizer] " << name << " from department: " << department << std::endl;
+}
+
+std::string Organizer::getRole() const {
+    return "Organizer";
+}
+
+void Organizer::displayInfo() const {
+    describe();
 }
