@@ -13,4 +13,7 @@ add_executable(ooplblb main.cpp
         Location.cpp
         Location.h
         Meeting.cpp
-        Meeting.h)
+        Meeting.h
+        VipParticipant.cpp
+        VipParticipant.h
+)

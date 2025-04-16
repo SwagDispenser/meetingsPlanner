@@ -85,6 +85,12 @@ build CMakeFiles/ooplblb.dir/Meeting.cpp.o: CXX_COMPILER__ooplblb_unscanned_Debu
   OBJECT_DIR = CMakeFiles/ooplblb.dir
   OBJECT_FILE_DIR = CMakeFiles/ooplblb.dir
 
+build CMakeFiles/ooplblb.dir/VipParticipant.cpp.o: CXX_COMPILER__ooplblb_unscanned_Debug /Users/dmytro/CLionProjects/ooplblb/VipParticipant.cpp || cmake_object_order_depends_target_ooplblb
+  DEP_FILE = CMakeFiles/ooplblb.dir/VipParticipant.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/ooplblb.dir
+  OBJECT_FILE_DIR = CMakeFiles/ooplblb.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ooplblb
@@ -93,7 +99,7 @@ build CMakeFiles/ooplblb.dir/Meeting.cpp.o: CXX_COMPILER__ooplblb_unscanned_Debu
 #############################################
 # Link the executable ooplblb
 
-build ooplblb: CXX_EXECUTABLE_LINKER__ooplblb_Debug CMakeFiles/ooplblb.dir/main.cpp.o CMakeFiles/ooplblb.dir/Participant.cpp.o CMakeFiles/ooplblb.dir/Organizer.cpp.o CMakeFiles/ooplblb.dir/RegularParticipant.cpp.o CMakeFiles/ooplblb.dir/Location.cpp.o CMakeFiles/ooplblb.dir/Meeting.cpp.o
+build ooplblb: CXX_EXECUTABLE_LINKER__ooplblb_Debug CMakeFiles/ooplblb.dir/main.cpp.o CMakeFiles/ooplblb.dir/Participant.cpp.o CMakeFiles/ooplblb.dir/Organizer.cpp.o CMakeFiles/ooplblb.dir/RegularParticipant.cpp.o CMakeFiles/ooplblb.dir/Location.cpp.o CMakeFiles/ooplblb.dir/Meeting.cpp.o CMakeFiles/ooplblb.dir/VipParticipant.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk
   OBJECT_DIR = CMakeFiles/ooplblb.dir
   POST_BUILD = :
