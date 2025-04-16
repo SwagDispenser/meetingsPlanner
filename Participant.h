@@ -2,8 +2,9 @@
 #define PARTICIPANT_H
 
 #include <string>
+#include "InfoHandler.h"
 
-class Participant {
+class Participant : public InfoHandler {
 public:
     std::string name;
     std::string email;
@@ -16,13 +17,18 @@ public:
     Participant& operator=(const Participant& other);
     Participant& operator=(Participant&& other) noexcept;
 
-    ~Participant();
+    virtual ~Participant();
 
     std::string getName() const;
     std::string getEmail() const;
 
     void setName(const std::string& name);
     void setEmail(const std::string& email);
+
+    virtual std::string getRole() const;
+    virtual void describe() const = 0;
+    virtual void displayInfo() const override;
+
 };
 
 #endif // PARTICIPANT_H

@@ -87,18 +87,33 @@ void Meeting::setLocation(const Location& location) {
     this->location = location;
 }
 
-// Додавання учасника
 void Meeting::addParticipant(const RegularParticipant& participant) {
     participants.push_back(participant);
 }
 
 void Meeting::removeParticipant(const std::string& participantEmail) {
-    participants.erase(std::remove_if(participants.begin(), participants.end(),
-        [&participantEmail](const RegularParticipant& p) {
-            return p.getEmail() == participantEmail;
-        }), participants.end());
+    for (auto it = participants.begin(); it != participants.end(); ++it) {
+        if (it->getEmail() == participantEmail) {
+            participants.erase(it);
+            break;
+        }
+    }
 }
 
 void Meeting::display() const {
-    std::cout << "Title" << title << std::endl;
+    std::cout << "Title: " << title << std::endl;
+    std::cout << "Description: " << description << std::endl;
+    std::cout << "Date/Time: " << dateTime << std::endl;
+    std::cout << "Organizer: ";
+    organizer.displayInfo();
+    std::cout << "Location: ";
+    location.display();
+    std::cout << "Participants (" << participants.size() << "):" << std::endl;
+    for (const auto& p : participants) {
+        p.displayInfo();
+    }
+}
+
+void Meeting::displayInfo() const {
+    display();
 }

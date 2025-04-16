@@ -1,7 +1,5 @@
 #include "Participant.h"
-
 #include <iostream>
-#include <ostream>
 
 Participant::Participant() : name(""), email("") {}
 
@@ -48,3 +46,10 @@ void Participant::setEmail(const std::string& email) {
     this->email = email;
 }
 
+std::string Participant::getRole() const {
+    return "Participant";
+}
+
+void Participant::displayInfo() const {
+    std::cout << "Name: " << name << ", Email: " << email << std::endl;
+}
