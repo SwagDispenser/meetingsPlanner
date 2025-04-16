@@ -1,10 +1,14 @@
 #include <iostream>
+#include <vector>
 #include "Organizer.h"
 #include "RegularParticipant.h"
 #include "Meeting.h"
+#include "InfoHandler.h"
+#include "Participant.h"
+#include "Location.h"
+#include "VipParticipant.h"
 
 int main() {
-
     std::cout << "\nOrganizer:\n";
     Organizer org1("Іван", "ivan@example.com", "HR");
     Organizer org2(org1);
@@ -31,5 +35,16 @@ int main() {
     std::cout << "Meet2: " << meet2.getTitle() << ", Організатор: " << meet2.getOrganizer().getName() << std::endl;
     std::cout << "Meet3: " << meet3.getTitle() << ", Організатор: " << meet3.getOrganizer().getName() << std::endl;
 
+    std::vector<InfoHandler*> infos;
+    infos.push_back(&org2);
+    infos.push_back(&p2);
+    infos.push_back(&meet2);
+
+    RegularParticipant base;
+    VipParticipant derived;
+    base.doStaticThing();
+    derived.doStaticThing();
+    RegularParticipant* pb = new VipParticipant;
+    pb->doStaticThing();
     return 0;
 }
