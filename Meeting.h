@@ -22,7 +22,6 @@ public:
             const Organizer& organizer, const Location& location);
     Meeting(const Meeting& other);
     Meeting(Meeting&& other) noexcept;
-
     virtual ~Meeting();
 
     std::string getTitle() const;
